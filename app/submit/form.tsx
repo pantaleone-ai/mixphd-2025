@@ -37,16 +37,16 @@ import { schema } from "./schema"
 const p = () => new Promise((resolve) => setTimeout(() => resolve(""), 900))
 
 const categories = [
-  { label: "Boilerplate", value: "boilerplate" },
-  { label: "Analytics", value: "analytics" },
-  { label: "Marketing Tools", value: "marketing-tools" },
-  { label: "Developer Tools", value: "developer-tools" },
-  { label: "E-commerce", value: "e-commerce" },
-  { label: "Productivity", value: "productivity" },
-  { label: "Design Tools", value: "design-tools" },
-  { label: "Fintech", value: "fintech" },
-  { label: "Education", value: "education" },
-  { label: "SaaS", value: "saas" },
+  { label: "Cocktails", value: "cocktails" },
+  { label: "Mocktails", value: "mocktails" },
+  { label: "Beer", value: "beer" },
+  { label: "Wine", value: "wine" },
+  { label: "Spirits", value: "spirits" },
+  { label: "Coffee", value: "coffee" },
+  { label: "Tea", value: "tea" },
+  { label: "Juices", value: "juices" },
+  { label: "Smoothies", value: "smoothies" },
+  { label: "Craft Beverages", value: "craft-beverages" },
 ]
 
 export const SubmitTool = () => {
@@ -172,9 +172,9 @@ export const SubmitTool = () => {
             name="productWebsite"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Product website</FormLabel>
+                <FormLabel>Recipe website</FormLabel>
                 <FormControl>
-                  <Input placeholder="Your product url" {...field} />
+                  <Input placeholder="Your recipe url" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -183,16 +183,16 @@ export const SubmitTool = () => {
         </div>
 
         <GradientHeading size="xs">
-          Tell us more about your product
+          Tell us more about your recipe
         </GradientHeading>
         <FormField
           control={form.control}
           name="codename"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Your product's name</FormLabel>
+              <FormLabel>Your recipe's name</FormLabel>
               <FormControl>
-                <Input placeholder="Your product's codename" {...field} />
+                <Input placeholder="Your recipe's name" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -203,9 +203,9 @@ export const SubmitTool = () => {
           name="punchline"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Your product's punchline (&lt;10 words)</FormLabel>
+              <FormLabel>Your recipe's punchline (&lt;10 words)</FormLabel>
               <FormControl>
-                <Input placeholder="Your product's punchline" {...field} />
+                <Input placeholder="Your recipe's punchline" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -247,7 +247,7 @@ export const SubmitTool = () => {
           name="categories"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Product Category</FormLabel>
+              <FormLabel>Recipe Category</FormLabel>
               <Select
                 onValueChange={field.onChange}
                 defaultValue={field.value}
@@ -270,7 +270,7 @@ export const SubmitTool = () => {
                 </SelectContent>
               </Select>
               <FormDescription>
-                This is the categories that will be used in the dashboard.
+                These are the recipe categories that will be used in the mixPHD navigation.
               </FormDescription>
               <FormMessage />
             </FormItem>

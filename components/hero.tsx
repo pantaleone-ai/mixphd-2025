@@ -1,11 +1,8 @@
 import React from "react"
 import Link from "next/link"
-import { PlusIcon, Twitter } from "lucide-react"
-
+import { PlusIcon } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
-
 import { Button } from "./ui/button"
-import { NextIcon, SupabaseIcon } from "./ui/icons"
 
 export function Hero({ children }: { children?: React.ReactNode }) {
   return (
@@ -16,20 +13,18 @@ export function Hero({ children }: { children?: React.ReactNode }) {
           variant="outline"
           className="border border-primary/10 hidden md:block"
         >
-          <span className="h-2 w-2 bg-yellow-400 rounded-full animate-pulse mr-1"></span>
-          free drink recipes
+          <span className="h-2 w-2 bg-grey-400 text-xs rounded-full animate-pulse mr-1"></span>
+          the drink doctor
         </Badge>
       </div>
       <div className="flex flex-col items-center md:items-start md:mt-4">
         <Badge className="hidden md:block" variant="default">
-          Dr. Mixology
+          Quench thirst here
         </Badge>
         <div className="flex w-full items-center mt-2 justify-center md:justify-start">
-          <NextIcon className="hidden md:block size-4" />
           <span className="mx-2 text-xl font-bold text-left">
-            The best drink recipes in the world
+            The best drink recipes in the world recommended by MixPHD.com
           </span>
-          <SupabaseIcon className="hidden md:block size-4" />
         </div>
         <p className="mt-2 text-center md:text-left text-muted-foreground text-sm md:text-base px-2">
             Explore the World's Best Cocktail & Drink Recipes for Every Occasion
@@ -38,7 +33,7 @@ export function Hero({ children }: { children?: React.ReactNode }) {
       <div className="flex mt-4 mb-4 space-x-4">
         <Button variant="secondary" asChild>
           <Link href="/submit" className="flex items-center text-black">
-            <PlusIcon className="size-4 mr-1" /> Submit drink recipe
+            <PlusIcon className="size-4 mr-1" /> Submit your drink recipe
           </Link>
         </Button>
         {/* <a

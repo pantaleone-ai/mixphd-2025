@@ -18,23 +18,19 @@ const defaultUrl = process.env.VERCEL_URL
 
 export const metadata = {
   metadataBase: new URL(defaultUrl),
-  title: "Design x Engineering Directory - Discover Top Web Dev Tools",
-  description:
-    "Explore a curated directory of free web development tools for designers and engineers. Find resources for JavaScript, Tailwind CSS, and more!",
-  keywords:
-    "Design, Engineering, Web Development, JavaScript, Tailwind CSS, Supabase, Free Tools, Design Engineering",
+  title: "MixPhD - Premium Drinkware & Barware for Cocktail Enthusiasts",
+  description: "Discover premium drinkware and barware at MixPhD. Shop high-quality cocktail glasses, shakers, and bar tools designed for mixology lovers and home bartenders.",
+  keywords: "drinkware, barware, cocktail glasses, mixology tools, bar tools, cocktail shakers, premium drinkware, home bartending, MixPhD",
   structuredData: {
     "@context": "http://schema.org",
     "@type": "WebSite",
-    name: "Design x Engineering Directory",
-    url: "https://www.nextjs.design/",
-    description:
-      "A free directory of awesome web development tools for design and engineering professionals.",
+    "name": "MixPhD",
+    "url": "https://www.mixphd.com/",
+    "description": "MixPhD offers premium drinkware and barware for cocktail enthusiasts and home bartenders, featuring high-quality cocktail glasses, shakers, and mixology tools."
   },
   socialMediaTags: {
-    "og:title": "Design x Engineering Directory - Discover Top Web Dev Tools",
-    "og:description":
-      "Explore a curated directory of free web development tools for designers and engineers. Find resources for JavaScript, Tailwind CSS, and more!",
+    "og:title": "MixPhD - Premium Drinkware & Barware for Cocktail Enthusiasts",
+    "og:description": "Shop premium cocktail glasses, shakers, and bar tools at MixPhD. Elevate your mixology game with high-quality drinkware designed for home bartenders.",
     "twitter:card": "summary_large_image",
   },
 }
@@ -45,7 +41,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
