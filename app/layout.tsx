@@ -4,7 +4,7 @@ import localFont from "next/font/local"
 
 import { Toaster } from "@/components/ui/sonner"
 import { TooltipProvider } from "@/components/ui/tooltip"
-
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { ThemeProvider } from "./providers"
 
 export const fontSans = localFont({
@@ -53,6 +53,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <Toaster richColors />
         </ThemeProvider>
       </body>
+      <GoogleAnalytics gaId="G-ZG7Z12ZQEE" />
     </html>
   )
 }
