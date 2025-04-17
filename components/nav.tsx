@@ -20,16 +20,16 @@ import {
 } from "lucide-react"
 
 import { cn, truncateString } from "@/lib/utils"
-import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+// import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+// import {
+//   DropdownMenu,
+//   DropdownMenuContent,
+//   DropdownMenuItem,
+//   DropdownMenuLabel,
+//   DropdownMenuSeparator,
+//   DropdownMenuTrigger,
+// } from "@/components/ui/dropdown-menu"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import {
@@ -101,7 +101,7 @@ export function NavSidebar({
               : "pl-3 flex flex-col justify-center gap-4 items-start pb-8"
           }
         >
-          <DropdownMenu>
+          {/* <DropdownMenu>
             <DropdownMenuTrigger>
               <Avatar>
                 <AvatarFallback className="bg-gradient-to-r from-yellow-300 to-yellow-300" />
@@ -126,7 +126,7 @@ export function NavSidebar({
                 </DropdownMenuItem>
               </div>
             </DropdownMenuContent>
-          </DropdownMenu>
+          </DropdownMenu> */}
           <div className="">
             <ModeToggle />
           </div>
@@ -186,7 +186,7 @@ export function NavSidebar({
                           onClick={handleLinkClick}
                         >
                           <PlusIcon className="h-5 w-5" />
-                          Submit
+                          Submit Recipe
                         </Link>
 
                         <Link
@@ -205,7 +205,7 @@ export function NavSidebar({
               </nav>
               <div className="flex flex-col items-start pl-4">
                 <nav className="mb-6   flex gap-4 ">
-                  <DropdownMenu>
+                  {/* <DropdownMenu>
                     <DropdownMenuTrigger>
                       <Avatar>
                         <AvatarFallback className="bg-gradient-to-r from-yellow-300 to-yellow-300" />
@@ -228,7 +228,7 @@ export function NavSidebar({
                         </DropdownMenuItem>
                       </div>
                     </DropdownMenuContent>
-                  </DropdownMenu>
+                  </DropdownMenu> */}
                   <ModeToggle />
                 </nav>
               </div>
@@ -264,8 +264,8 @@ function ProductNav({
       <ScrollArea className="h-[calc(100vh-320px)] md:h-[calc(100vh-200px)] flex flex-col gap-4 pl-2">
         {categories && categories?.length > 0 && (
           <div className="flex items-center gap-2 mt-6 text-muted-foreground">
-            <BoxIcon className="size-5 stroke-yellow-400" />
-            <p className="text-sm md:hidden">Categories</p>
+            <BoxIcon className="size-5 stroke-grey-400" />
+            <p className="text-sm md:hidden">Drink Categories</p>
           </div>
         )}
         <ul className="mt-2 w-36 flex flex-col gap-2 items-start justify-center py-2">
@@ -443,22 +443,16 @@ function AdminNav({ pathname }: { pathname: string }) {
 export function LogoAnimationLink() {
   return (
     <Button
-      className="relative w-full size-9 rounded-full bg-black"
+      className="relative w-full rounded-full bg-black"
       variant="outline"
       asChild
     >
       <Link href="/" className="flex justify-center">
-        <div className="absolute bg-yellow-300/90 h-[80%] w-[2px] rounded-bl-full rounded-br-full l-0 r-0 animate-[spin-scale_40s_linear_infinite]" />
-        <div className="absolute bg-pink-300/90 h-[80%] w-[2px] rounded-bl-full rounded-br-full l-0 r-0 animate-[spin-scale_30s_linear_infinite]" />
-        <div className="absolute bg-cyan-300/70 h-[80%] w-[2px] rounded-bl-full rounded-br-full l-0 r-0 animate-[spin-scale_20s_linear_infinite]" />
-        <div className="absolute bg-yellow-300/90 h-[80%] w-[2px] rounded-bl-full rounded-br-full l-0 r-0 animate-[spin-scale_15s_linear_infinite]" />
-        <div className="absolute bg-pink-300/70 h-[80%] w-[2px] rounded-bl-full rounded-br-full l-0 r-0 animate-[spin-scale_10s_linear_infinite]" />
-
-        <div className="absolute bg-pink-300/90 h-[40%] w-[2px] rounded-bl-full rounded-br-full l-0 r-0 animate-[spin-scale_80s_linear_infinite]" />
-        <div className="absolute bg-cyan-300/70 h-[40%] w-[2px] rounded-bl-full rounded-br-full l-0 r-0 animate-[spin-scale_60s_linear_infinite]" />
-        <div className="absolute bg-yellow-300/90 h-[40%] w-[2px] rounded-bl-full rounded-br-full l-0 r-0 animate-[spin-scale_40s_linear_infinite]" />
-        <div className="absolute bg-pink-300/90 h-[40%] w-[2px] rounded-bl-full rounded-br-full l-0 r-0 animate-[spin-scale_30s_linear_infinite]" />
-        <div className="absolute bg-cyan-300/90 h-[40%] w-[2px] rounded-bl-full rounded-br-full l-0 r-0 animate-[spin-scale_20s_linear_infinite]" />
+      <svg height="24" viewBox="0 0 64 64" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M63.414 3.414A2.001 2.001 0 0 0 62 0H2A2 2 0 0 0 .586 3.414L30 32.828V60H20a2 2 0 1 0 0 4h24a2 2 0 1 0 0-4H34V32.828zM57.172 4l-4 4H10.829l-4-4zM32 29.172 14.829 12h34.343z" fill="#fff"></path>
+        <path d="m57.172 4-4 4H10.829l-4-4z" fill="#8228db"></path>
+        <path d="M32 29.172 14.829 12h34.343z" fill="#1b3bcc"></path>
+      </svg>
       </Link>
     </Button>
   )

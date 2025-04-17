@@ -13,7 +13,7 @@ export const fontSans = localFont({
 })
 
 const defaultUrl = process.env.VERCEL_URL
-  ? `https://www.nextjs.design`
+  ? `https://www.mixphd.com`
   : "http://localhost:3000"
 
 export const metadata = {

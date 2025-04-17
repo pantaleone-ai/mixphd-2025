@@ -139,32 +139,32 @@ export const FeaturedGrid: React.FC<{ featuredData: Product[] }> = ({
 export const EmptyFeaturedGrid = () => {
   const emptyData = [
     {
-      codename: "Join the cult",
-      punchline: "Next.j, Supabase & Tailwind Starters",
+      codename: "Emerald Martini",
+      punchline: "Drinking gemstones",
       product_website: "https://newcult.co",
       description:
-        "Check out newcult.co for the premium version of this template",
-      logo_src: "/ad-placeholder-metrics.png",
+        "This gem offers a playful, fruity twist on the classic martini, perfect for a lively setting",
+      logo_src: "/green-martini-min.jpeg",
       tags: ["featured"],
       labels: ["featured-ad"],
     },
     {
-      codename: "To get Admin Dashboard",
+      codename: "Cherry Lemon Drop Martini",
       product_website: "https://newcult.co",
-      punchline: "Next.j, Supabase & Tailwind Starters",
+      punchline: "Cherry Lemon Goodness",
       description:
-        "Join the cult and get access to the admin dashboard for this template.",
-      logo_src: "/ad-placeholder-1.png",
+        "Crisp, bold, and made to dazzle at any chic daytime soiree",
+      logo_src: "/white-martini-min.jpeg",
       tags: ["featured"],
       labels: ["featured-ad"],
     },
     {
-      codename: "And AI scripts",
+      codename: "Goldie - The Golden Olive Martini",
       product_website: "https://newcult.co",
-      punchline: "Next.j, Supabase & Tailwind Starters",
+      punchline: "Goldie",
       description:
-        "Includes AI scripts to quickly add new products to your directory..",
-      logo_src: "/ad-placeholder-tags.png",
+        "A bold martini variation with a golden hue, likely infused with a hint of citrus liqueur, garnished with a single olive and a bright orange slice.",
+      logo_src: "/orange-martini-min.jpeg",
       tags: ["featured"],
       labels: ["featured-ad"],
     },
