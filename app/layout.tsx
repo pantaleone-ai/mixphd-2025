@@ -37,8 +37,8 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={`${fontSans.variable} font-sans  `}>
-      <body>
+    <html lang="en" className={`${fontSans.variable} font-sans scroll-smooth  `} suppressHydrationWarning={true}>
+      <body suppressHydrationWarning={true}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
