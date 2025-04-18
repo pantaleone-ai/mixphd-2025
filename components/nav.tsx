@@ -181,7 +181,7 @@ export function NavSidebar({
                           <HomeIcon className="h-5 w-5" />
                           Home
                         </Link>
-                        <Link
+                        {/* <Link
                           href="/submit"
                           className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
                           prefetch={false}
@@ -199,7 +199,7 @@ export function NavSidebar({
                         >
                           <LogIn className="h-5 w-5" />
                           Login
-                        </Link>
+                        </Link> */}
                       </div>
                     </ProductNav>
                   </>
@@ -267,7 +267,7 @@ function ProductNav({
         {categories && categories?.length > 0 && (
           <div className="flex items-center gap-2 mt-6 text-muted-foreground">
             <BoxIcon className="size-5 stroke-grey-400" />
-            <p className="text-md font-bold">Drink Categories</p>
+            <p className="text-sm font-semibold">Drink Categories</p>
           </div>
         )}
         <ul className="mt-2 w-36 flex flex-col gap-2 items-start justify-center py-2">
@@ -277,7 +277,7 @@ function ProductNav({
                 href={`/products?category=${category}`}
                 onClick={handleLinkClick}
                 className={cn(
-                  "flex items-start space-x-2 text-sm font-medium text-neutral-700 dark:text-neutral-300 rounded-md px-2 py-0.5",
+                  "flex items-start space-x-2 text-xs font-medium text-neutral-700 dark:text-neutral-300 rounded-md px-2 py-0.5",
                   "shadow-[0_0_0_1px_rgba(0,0,0,0.1)_inset,0_0.5px_0.5px_rgba(0,0,0,0.05)_inset,0_-0.5px_0.5px_rgba(0,0,0,0.05)_inset,0_1px_2px_rgba(0,0,0,0.1)]",
                   "dark:shadow-[0_0_0_0.5px_rgba(255,255,255,0.06)_inset,0_0.5px_0.5px_rgba(255,255,255,0.1)_inset,0_-0.5px_0.5px_rgba(255,255,255,0.1)_inset,0_0.5px_1px_rgba(0,0,0,0.3),0_1px_2px_rgba(0,0,0,0.4)]",
                   "dark:hover:shadow-[0_0_0_0.5px_rgba(255,255,255,0.1)_inset,0_0.5px_0.5px_rgba(255,255,255,0.1)_inset,0_-0.5px_0.5px_rgba(255,255,255,0.1)_inset,0_0.5px_1px_rgba(0,0,0,0.4),0_1px_2px_rgba(0,0,0,0.5)]",
@@ -295,10 +295,41 @@ function ProductNav({
           ))}
         </ul>
 
+        {labels && labels?.length > 0 && (
+          <div className="flex items-center gap-2 mt-6 text-muted-foreground">
+            <Hash className="size-5 stroke-cyan-400" />
+            <p className="text-sm font-semibold">Labels</p>
+          </div>
+        )}
+        <ul className="mt-2 w-36 flex flex-col gap-2 items-start justify-center py-2">
+          {labels?.map((label: string, index: number) => (
+            <li key={`label-${index}-${label}`}>
+              <Link
+                href={`/products?label=${label}`}
+                onClick={handleLinkClick}
+                className={cn(
+                  "flex items-start space-x-2 text-xs font-medium text-neutral-700 dark:text-neutral-300 rounded-md px-2 py-0.5",
+                  "shadow-[0_0_0_1px_rgba(0,0,0,0.1)_inset,0_0.5px_0.5px_rgba(0,0,0,0.05)_inset,0_-0.5px_0.5px_rgba(0,0,0,0.05)_inset,0_1px_2px_rgba(0,0,0,0.1)]",
+                  "dark:shadow-[0_0_0_0.5px_rgba(255,255,255,0.06)_inset,0_0.5px_0.5px_rgba(255,255,255,0.1)_inset,0_-0.5px_0.5px_rgba(255,255,255,0.1)_inset,0_0.5px_1px_rgba(0,0,0,0.3),0_1px_2px_rgba(0,0,0,0.4)]",
+                  "dark:hover:shadow-[0_0_0_0.5px_rgba(255,255,255,0.1)_inset,0_0.5px_0.5px_rgba(255,255,255,0.1)_inset,0_-0.5px_0.5px_rgba(255,255,255,0.1)_inset,0_0.5px_1px_rgba(0,0,0,0.4),0_1px_2px_rgba(0,0,0,0.5)]",
+                  searchParams.get("label") === label
+                    ? "bg-cyan-400 text-black dark:text-black font-bold"
+                    : ""
+                )}
+                prefetch={false}
+              >
+                <span className="text-ellipsis overflow-hidden">
+                  {label && truncateString(label, 12)}
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+
         {tags && tags?.length > 0 && (
           <div className="flex items-center gap-2 mt-6 text-muted-foreground">
             <TagIcon className="size-5 stroke-pink-400" />
-            <p className="text-md font-bold">Tags</p>
+            <p className="text-sm font-semibold">Tags</p>
           </div>
         )}
         <ul className="mt-2 md:w-36 flex flex-col gap-2 items-start justify-center py-2">
@@ -308,7 +339,7 @@ function ProductNav({
                 href={`/products?tag=${tag}`}
                 onClick={handleLinkClick}
                 className={cn(
-                  "flex items-start space-x-2 text-sm font-medium text-neutral-700 dark:text-neutral-300 rounded-md px-2 py-0.5",
+                  "flex items-start space-x-2 text-xs font-medium text-neutral-700 dark:text-neutral-300 rounded-md px-2 py-0.5",
                   "shadow-[0_0_0_1px_rgba(0,0,0,0.1)_inset,0_0.5px_0.5px_rgba(0,0,0,0.05)_inset,0_-0.5px_0.5px_rgba(0,0,0,0.05)_inset,0_1px_2px_rgba(0,0,0,0.1)]",
                   "dark:shadow-[0_0_0_0.5px_rgba(255,255,255,0.06)_inset,0_0.5px_0.5px_rgba(255,255,255,0.1)_inset,0_-0.5px_0.5px_rgba(255,255,255,0.1)_inset,0_0.5px_1px_rgba(0,0,0,0.3),0_1px_2px_rgba(0,0,0,0.4)]",
                   "dark:hover:shadow-[0_0_0_0.5px_rgba(255,255,255,0.1)_inset,0_0.5px_0.5px_rgba(255,255,255,0.1)_inset,0_-0.5px_0.5px_rgba(255,255,255,0.1)_inset,0_0.5px_1px_rgba(0,0,0,0.4),0_1px_2px_rgba(0,0,0,0.5)]",
@@ -326,36 +357,7 @@ function ProductNav({
           ))}
         </ul>
 
-        {labels && labels?.length > 0 && (
-          <div className="flex items-center gap-2 mt-6 text-muted-foreground">
-            <Hash className="size-5 stroke-cyan-400" />
-            <p className="text-md font-bold">Labels</p>
-          </div>
-        )}
-        <ul className="mt-2 w-36 flex flex-col gap-2 items-start justify-center py-2">
-          {labels?.map((label: string, index: number) => (
-            <li key={`label-${index}-${label}`}>
-              <Link
-                href={`/products?label=${label}`}
-                onClick={handleLinkClick}
-                className={cn(
-                  "flex items-start space-x-2 text-sm font-medium text-neutral-700 dark:text-neutral-300 rounded-md px-2 py-0.5",
-                  "shadow-[0_0_0_1px_rgba(0,0,0,0.1)_inset,0_0.5px_0.5px_rgba(0,0,0,0.05)_inset,0_-0.5px_0.5px_rgba(0,0,0,0.05)_inset,0_1px_2px_rgba(0,0,0,0.1)]",
-                  "dark:shadow-[0_0_0_0.5px_rgba(255,255,255,0.06)_inset,0_0.5px_0.5px_rgba(255,255,255,0.1)_inset,0_-0.5px_0.5px_rgba(255,255,255,0.1)_inset,0_0.5px_1px_rgba(0,0,0,0.3),0_1px_2px_rgba(0,0,0,0.4)]",
-                  "dark:hover:shadow-[0_0_0_0.5px_rgba(255,255,255,0.1)_inset,0_0.5px_0.5px_rgba(255,255,255,0.1)_inset,0_-0.5px_0.5px_rgba(255,255,255,0.1)_inset,0_0.5px_1px_rgba(0,0,0,0.4),0_1px_2px_rgba(0,0,0,0.5)]",
-                  searchParams.get("label") === label
-                    ? "bg-cyan-400 text-black dark:text-black font-bold"
-                    : ""
-                )}
-                prefetch={false}
-              >
-                <span className="text-ellipsis overflow-hidden">
-                  {label && truncateString(label, 12)}
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
+       
       </ScrollArea>
     </div>
   )
