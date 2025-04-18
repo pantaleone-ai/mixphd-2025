@@ -22,6 +22,7 @@ import {
 import { cn, truncateString } from "@/lib/utils"
 // import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 // import {
 //   DropdownMenu,
 //   DropdownMenuContent,
@@ -39,6 +40,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip"
 import { ModeToggle } from "@/app/providers"
+import logo from '@/public/mixphd-logo.png';
 
 export function NavSidebar({
   categories,
@@ -453,7 +455,9 @@ export function LogoAnimationLink() {
         <path d="m57.172 4-4 4H10.829l-4-4z" fill="#8228db"></path>
         <path d="M32 29.172 14.829 12h34.343z" fill="#1b3bcc"></path>
       </svg> */}
+      <Image src={ logo } alt="mixPHD Logo" className="relative w-full w-8 h-8 rounded-full bg-black " >
 
+      </Image>
       
       </Link>
     </Button>

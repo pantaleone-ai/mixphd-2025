@@ -71,7 +71,7 @@ export const ProductDetails = ({ product }: { product: Product }) => (
 
           <Link
             href={`/products`}
-            className="py-4 md:flex items-center text-2xl font-semibold text-yellow-500  z-10 hidden"
+            className="py-4 md:flex items-center text-2xl font-semibold  z-10 hidden"
           >
             <ArrowLeft className="mr-2" /> Back to all recipes
           </Link>

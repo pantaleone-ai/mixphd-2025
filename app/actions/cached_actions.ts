@@ -74,5 +74,5 @@ export const getCachedFilters = unstable_cache(
     return { categories, labels, tags }
   },
   ["product-filters"],
-  { tags: [`product_filters`], revalidate: 9000 }
+  { tags: [`product_filters`], revalidate: 5000 }
 )

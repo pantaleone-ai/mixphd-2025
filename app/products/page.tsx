@@ -42,16 +42,16 @@ export default async function ProductsPage({
               <div className="md:mr-auto mx-auto flex flex-col items-center md:items-start">
                 <div className="flex mb-1 justify-center md:justify-start">
                   {search ? (
-                    <Search className="mr-1 bg-neutral-800 fill-yellow-300/30 stroke-yellow-500 size-6 p-1 rounded-full" />
+                    <Search className="mr-1 bg-neutral-800 size-6 p-1 rounded-full" />
                   ) : null}
                   {category ? (
-                    <BoxIcon className="mr-1 bg-neutral-800 fill-yellow-300/30 stroke-yellow-500 size-6 p-1 rounded-full" />
+                    <BoxIcon className="mr-1 bg-neutral-800 size-6 p-1 rounded-full" />
                   ) : null}
                   {label ? (
-                    <Hash className="mr-1 bg-neutral-800 fill-yellow-300/30 stroke-yellow-500 size-6 p-1 rounded-full" />
+                    <Hash className="mr-1 bg-neutral-800 size-6 p-1 rounded-full" />
                   ) : null}
                   {tag ? (
-                    <TagIcon className="mr-1 bg-neutral-800 fill-yellow-300/30 stroke-yellow-500 size-6 p-1 rounded-full" />
+                    <TagIcon className="mr-1 bg-neutral-800 size-6 p-1 rounded-full" />
                   ) : null}
                   {search ? "search" : ""}
                   {category ? "category" : ""}
