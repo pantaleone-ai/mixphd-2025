@@ -2,7 +2,7 @@ import { ReactElement } from "react"
 import { BoxIcon, Hash, Search, TagIcon } from "lucide-react"
 
 // import { Badge } from "@/components/ui/badge"
-// import { Separator } from "@/components/ui/separator"
+import { Separator } from "@/components/ui/separator"
 import { FadeIn } from "@/components/cult/fade-in"
 import { GradientHeading } from "@/components/cult/gradient-heading"
 import { ResourceCardGrid } from "@/components/directory-card-grid"
@@ -69,7 +69,7 @@ export default async function ProductsPage({
               </div>
             ) : null}
 
-            {/* <Separator className="mb-12 ml-auto w-[85%] bg-black/5 h-[2px] animate-pulse rounded-l-full" /> */}
+            <Separator className="mb-12 ml-auto w-[85%] bg-black/5 h-[2px] animate-pulse rounded-l-full" />
           </ResourceCardGrid>
         </FadeIn>
       </div>

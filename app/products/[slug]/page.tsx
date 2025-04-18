@@ -20,11 +20,11 @@ const ProductIdPage = async ({ params }: { params: { slug: string } }) => {
       <div className="z-10">
         <div className=" py-4 w-full relative  mx-auto max-w-6xl">
           <FadeIn>
-                  <div className="grid justify-items-end">
+                  {/* <div className="grid justify-items-end">
                   <div className=" max-w-full pt-4 ml-auto">
                   <DirectorySearch />
                   </div>
-                  </div>
+                  </div> */}
             {data ? <ProductDetails product={data[0]} /> : null}</FadeIn>
         </div>
       </div>
