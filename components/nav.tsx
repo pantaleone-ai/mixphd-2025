@@ -448,11 +448,13 @@ export function LogoAnimationLink() {
       asChild
     >
       <Link href="/" className="flex justify-center">
-      <svg height="24" viewBox="0 0 64 64" width="24" xmlns="http://www.w3.org/2000/svg">
+      {/* <svg height="24" viewBox="0 0 64 64" width="24" xmlns="http://www.w3.org/2000/svg">
         <path d="M63.414 3.414A2.001 2.001 0 0 0 62 0H2A2 2 0 0 0 .586 3.414L30 32.828V60H20a2 2 0 1 0 0 4h24a2 2 0 1 0 0-4H34V32.828zM57.172 4l-4 4H10.829l-4-4zM32 29.172 14.829 12h34.343z" fill="#fff"></path>
         <path d="m57.172 4-4 4H10.829l-4-4z" fill="#8228db"></path>
         <path d="M32 29.172 14.829 12h34.343z" fill="#1b3bcc"></path>
-      </svg>
+      </svg> */}
+
+      
       </Link>
     </Button>
   )

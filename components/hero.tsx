@@ -19,11 +19,11 @@ export function Hero({ children }: { children?: React.ReactNode }) {
       </div>
       <div className="flex flex-col items-center md:items-start md:mt-4">
         <Badge className="hidden md:block" variant="default">
-          Quench thirst here
+          Quench here ⤵️
         </Badge>
         <div className="flex w-full items-center mt-2 justify-center md:justify-start">
           <span className="mx-2 text-xl font-bold text-left">
-            The best drink recipes in the world recommended by MixPHD.com
+            The best drink recipes in the world recommended by MixPHD
           </span>
         </div>
         <p className="mt-2 text-center md:text-left text-muted-foreground text-sm md:text-base px-2">
