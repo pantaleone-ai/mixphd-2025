@@ -267,7 +267,7 @@ function ProductNav({
         {categories && categories?.length > 0 && (
           <div className="flex items-center gap-2 mt-6 text-muted-foreground">
             <BoxIcon className="size-5 stroke-grey-400" />
-            <p className="text-sm md:hidden">Drink Categories</p>
+            <p className="text-md font-bold">Drink Categories</p>
           </div>
         )}
         <ul className="mt-2 w-36 flex flex-col gap-2 items-start justify-center py-2">
@@ -282,7 +282,7 @@ function ProductNav({
                   "dark:shadow-[0_0_0_0.5px_rgba(255,255,255,0.06)_inset,0_0.5px_0.5px_rgba(255,255,255,0.1)_inset,0_-0.5px_0.5px_rgba(255,255,255,0.1)_inset,0_0.5px_1px_rgba(0,0,0,0.3),0_1px_2px_rgba(0,0,0,0.4)]",
                   "dark:hover:shadow-[0_0_0_0.5px_rgba(255,255,255,0.1)_inset,0_0.5px_0.5px_rgba(255,255,255,0.1)_inset,0_-0.5px_0.5px_rgba(255,255,255,0.1)_inset,0_0.5px_1px_rgba(0,0,0,0.4),0_1px_2px_rgba(0,0,0,0.5)]",
                   searchParams.get("category") === category
-                    ? "text-black dark:text-black"
+                    ? "bg-blue-400 text-black dark:text-black font-bold"
                     : ""
                 )}
                 prefetch={false}
@@ -298,7 +298,7 @@ function ProductNav({
         {tags && tags?.length > 0 && (
           <div className="flex items-center gap-2 mt-6 text-muted-foreground">
             <TagIcon className="size-5 stroke-pink-400" />
-            <p className="text-sm md:hidden">Tags</p>
+            <p className="text-md font-bold">Tags</p>
           </div>
         )}
         <ul className="mt-2 md:w-36 flex flex-col gap-2 items-start justify-center py-2">
@@ -313,7 +313,7 @@ function ProductNav({
                   "dark:shadow-[0_0_0_0.5px_rgba(255,255,255,0.06)_inset,0_0.5px_0.5px_rgba(255,255,255,0.1)_inset,0_-0.5px_0.5px_rgba(255,255,255,0.1)_inset,0_0.5px_1px_rgba(0,0,0,0.3),0_1px_2px_rgba(0,0,0,0.4)]",
                   "dark:hover:shadow-[0_0_0_0.5px_rgba(255,255,255,0.1)_inset,0_0.5px_0.5px_rgba(255,255,255,0.1)_inset,0_-0.5px_0.5px_rgba(255,255,255,0.1)_inset,0_0.5px_1px_rgba(0,0,0,0.4),0_1px_2px_rgba(0,0,0,0.5)]",
                   searchParams.get("tag") === tag
-                    ? "bg-pink-400 text-black dark:text-black"
+                    ? "bg-pink-400 text-black dark:text-black font-bold"
                     : ""
                 )}
                 prefetch={false}
@@ -329,7 +329,7 @@ function ProductNav({
         {labels && labels?.length > 0 && (
           <div className="flex items-center gap-2 mt-6 text-muted-foreground">
             <Hash className="size-5 stroke-cyan-400" />
-            <p className="text-sm md:hidden">Labels</p>
+            <p className="text-md font-bold">Labels</p>
           </div>
         )}
         <ul className="mt-2 w-36 flex flex-col gap-2 items-start justify-center py-2">
@@ -344,7 +344,7 @@ function ProductNav({
                   "dark:shadow-[0_0_0_0.5px_rgba(255,255,255,0.06)_inset,0_0.5px_0.5px_rgba(255,255,255,0.1)_inset,0_-0.5px_0.5px_rgba(255,255,255,0.1)_inset,0_0.5px_1px_rgba(0,0,0,0.3),0_1px_2px_rgba(0,0,0,0.4)]",
                   "dark:hover:shadow-[0_0_0_0.5px_rgba(255,255,255,0.1)_inset,0_0.5px_0.5px_rgba(255,255,255,0.1)_inset,0_-0.5px_0.5px_rgba(255,255,255,0.1)_inset,0_0.5px_1px_rgba(0,0,0,0.4),0_1px_2px_rgba(0,0,0,0.5)]",
                   searchParams.get("label") === label
-                    ? "bg-cyan-400 text-black dark:text-black"
+                    ? "bg-cyan-400 text-black dark:text-black font-bold"
                     : ""
                 )}
                 prefetch={false}

@@ -1,0 +1,3 @@
+User-agent: * 
+Disallow: /submit 
+Sitemap: https://www.mixphd.com/sitemap.xml
