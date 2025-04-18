@@ -267,7 +267,7 @@ function ProductNav({
         {categories && categories?.length > 0 && (
           <div className="flex items-center gap-2 mt-6 text-muted-foreground">
             <BoxIcon className="size-5 stroke-grey-400" />
-            <p className="text-sm font-semibold">Drink Categories</p>
+            <p className="text-sm font-bold">Categories</p>
           </div>
         )}
         <ul className="mt-2 w-36 flex flex-col gap-2 items-start justify-center py-2">
@@ -298,7 +298,7 @@ function ProductNav({
         {labels && labels?.length > 0 && (
           <div className="flex items-center gap-2 mt-6 text-muted-foreground">
             <Hash className="size-5 stroke-cyan-400" />
-            <p className="text-sm font-semibold">Labels</p>
+            <p className="text-sm font-bold">Labels</p>
           </div>
         )}
         <ul className="mt-2 w-36 flex flex-col gap-2 items-start justify-center py-2">
@@ -329,7 +329,7 @@ function ProductNav({
         {tags && tags?.length > 0 && (
           <div className="flex items-center gap-2 mt-6 text-muted-foreground">
             <TagIcon className="size-5 stroke-pink-400" />
-            <p className="text-sm font-semibold">Tags</p>
+            <p className="text-sm font-bold">Tags</p>
           </div>
         )}
         <ul className="mt-2 md:w-36 flex flex-col gap-2 items-start justify-center py-2">
