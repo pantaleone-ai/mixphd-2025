@@ -41,12 +41,17 @@ const categories = [
   { label: "Mocktails", value: "mocktails" },
   { label: "Beer", value: "beer" },
   { label: "Wine", value: "wine" },
-  { label: "Spirits", value: "spirits" },
-  { label: "Coffee", value: "coffee" },
+  { label: "Spirit-Forward", value: "spirit-forward" },
+  { label: "Hot", value: "hot" },
   { label: "Tea", value: "tea" },
   { label: "Juices", value: "juices" },
   { label: "Smoothies", value: "smoothies" },
   { label: "Craft Beverages", value: "craft-beverages" },
+  { label: "Savroy", value: "savory" },
+  { label: "Sour", value: "sour" },
+  { label: "Highball", value: "highball" },
+  { label: "Tropical", value: "tropical" },
+  { label: "Sparkling", value: "sparkling" },
 ]
 
 export const SubmitTool = () => {

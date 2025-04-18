@@ -1,8 +1,8 @@
 import { ReactElement } from "react"
 import { BoxIcon, Hash, Search, TagIcon } from "lucide-react"
 
-import { Badge } from "@/components/ui/badge"
-import { Separator } from "@/components/ui/separator"
+// import { Badge } from "@/components/ui/badge"
+// import { Separator } from "@/components/ui/separator"
 import { FadeIn } from "@/components/cult/fade-in"
 import { GradientHeading } from "@/components/cult/gradient-heading"
 import { ResourceCardGrid } from "@/components/directory-card-grid"
@@ -10,6 +10,7 @@ import { ResourceCardGrid } from "@/components/directory-card-grid"
 import { NavSidebar } from "../../components/nav"
 import { getCachedFilters } from "../actions/cached_actions"
 import { getProducts } from "../actions/product"
+import { DirectorySearch } from "@/components/directory-search"
 
 export const dynamic = "force-dynamic"
 
@@ -34,13 +35,17 @@ export default async function ProductsPage({
         labels={filters.labels}
         tags={filters.tags}
       />
-
-      <div className=" max-w-full pt-4">
+      <div className="grid justify-items-end">
+      <div className=" max-w-full pt-4 ml-auto">
+      <DirectorySearch />
+      </div>
         <FadeIn>
+
           <ResourceCardGrid sortedData={data} filteredFeaturedData={null}>
             {search ?? category ?? label ?? tag ? (
               <div className="md:mr-auto mx-auto flex flex-col items-center md:items-start">
                 <div className="flex mb-1 justify-center md:justify-start">
+                
                   {search ? (
                     <Search className="mr-1 bg-neutral-800 size-6 p-1 rounded-full" />
                   ) : null}

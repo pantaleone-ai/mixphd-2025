@@ -14,7 +14,7 @@ export function Hero({ children }: { children?: React.ReactNode }) {
           className="border border-primary/10 hidden md:block"
         >
           <span className="h-2 w-2 bg-grey-400 text-xs rounded-full animate-pulse mr-1"></span>
-          the drink doctor
+          the drink dr.
         </Badge>
       </div>
       <div className="flex flex-col items-center md:items-start md:mt-4">

@@ -282,7 +282,7 @@ function ProductNav({
                   "dark:shadow-[0_0_0_0.5px_rgba(255,255,255,0.06)_inset,0_0.5px_0.5px_rgba(255,255,255,0.1)_inset,0_-0.5px_0.5px_rgba(255,255,255,0.1)_inset,0_0.5px_1px_rgba(0,0,0,0.3),0_1px_2px_rgba(0,0,0,0.4)]",
                   "dark:hover:shadow-[0_0_0_0.5px_rgba(255,255,255,0.1)_inset,0_0.5px_0.5px_rgba(255,255,255,0.1)_inset,0_-0.5px_0.5px_rgba(255,255,255,0.1)_inset,0_0.5px_1px_rgba(0,0,0,0.4),0_1px_2px_rgba(0,0,0,0.5)]",
                   searchParams.get("category") === category
-                    ? "bg-yellow-400 text-black dark:text-black"
+                    ? "text-black dark:text-black"
                     : ""
                 )}
                 prefetch={false}
@@ -455,7 +455,7 @@ export function LogoAnimationLink() {
         <path d="m57.172 4-4 4H10.829l-4-4z" fill="#8228db"></path>
         <path d="M32 29.172 14.829 12h34.343z" fill="#1b3bcc"></path>
       </svg> */}
-      <Image src={ logo } alt="mixPHD Logo" className="relative w-full w-8 h-8 rounded-full bg-black " >
+      <Image src={ logo } alt="mixPHD Logo" className="relative w-8 h-8 rounded-full bg-black " >
 
       </Image>
       
