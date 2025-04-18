@@ -49,7 +49,7 @@ export const ProductDetails = ({ product }: { product: Product }) => (
         <div className="space-y-6 col-span-6 md:col-span-5 md:mt-12 z-10">
           <Breadcrumb>
             <BreadcrumbItem>
-              <BreadcrumbLink href="/">Products</BreadcrumbLink>/
+              <BreadcrumbLink href="/">Recipes</BreadcrumbLink>/
               <BreadcrumbLink href={`/products/${product.id}`}>
                 {product.codename.substring(0, 20)}
               </BreadcrumbLink>
