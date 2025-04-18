@@ -37,7 +37,7 @@ export default async function ProductsPage({
       />
       <div className="grid justify-items-end">
       <div className=" max-w-full pt-4 ml-auto">
-      <DirectorySearch />
+      {/* <DirectorySearch /> */}
       </div>
         <FadeIn>
 
