@@ -31,11 +31,11 @@ export function Hero({ children }: { children?: React.ReactNode }) {
         </p>
       </div>
       <div className="flex mt-4 mb-4 space-x-4">
-        <Button variant="secondary" asChild>
+        {/* <Button variant="secondary" asChild>
           <Link href="/submit" className="flex items-center text-black">
             <PlusIcon className="size-4 mr-1" /> Submit your drink recipe
           </Link>
-        </Button>
+        </Button> */}
         {/* <a
           href="https://x.com/nolansym"
           target="_blank"

@@ -4,6 +4,7 @@ import localFont from "next/font/local"
 
 import { Toaster } from "@/components/ui/sonner"
 import { TooltipProvider } from "@/components/ui/tooltip"
+import  ScrollToTopButton  from "@/components/ui/scroll-to-top-button"
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { ThemeProvider } from "./providers"
 
@@ -50,6 +51,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               <div className=" w-full ">{children}</div>
             </main>
           </TooltipProvider>
+          <ScrollToTopButton />
           <Toaster richColors />
         </ThemeProvider>
       </body>
