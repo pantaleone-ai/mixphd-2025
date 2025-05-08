@@ -54,17 +54,24 @@ async function Page({ searchParams }: { searchParams: { search?: string } }) {
                 {filteredFeaturedData.length >= 1 ? (
                   <Suspense fallback={<div>Loading...</div>}>
                     <div className=" relative">
+                      
                       <FeaturedGrid featuredData={filteredFeaturedData} />
+                    
                     </div>
+                    
                   </Suspense>
+                  
                 ) : (
                   <div className="relative">
                     <EmptyFeaturedGrid />
                   </div>
+                  
                 )}
               </div>
             </div>
+            
           </ResourceCardGrid>
+          
         </FadeIn>
       </div>
     </>

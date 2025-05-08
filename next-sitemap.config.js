@@ -2,4 +2,5 @@
 module.exports = {
     siteUrl: 'https://mixphd.com', // Replace with your production URL
     generateRobotsTxt: true, // (Optional) Generates a robots.txt file
+    sitemapSize: 5000
   }

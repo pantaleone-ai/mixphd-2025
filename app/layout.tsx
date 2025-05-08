@@ -7,6 +7,8 @@ import { TooltipProvider } from "@/components/ui/tooltip"
 import  ScrollToTopButton  from "@/components/ui/scroll-to-top-button"
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { ThemeProvider } from "./providers"
+import { link } from "fs"
+import { relative } from "path"
 
 export const fontSans = localFont({
   src: "../fonts/haskoy.ttf",
@@ -22,6 +24,7 @@ export const metadata = {
   title: "MixPhD - Premium Drinkware & Barware for Cocktail Enthusiasts",
   description: "Discover premium drinkware and barware at MixPhD. Shop high-quality cocktail glasses, shakers, and bar tools designed for mixology lovers and home bartenders.",
   keywords: "drinkware, barware, cocktail glasses, mixology tools, bar tools, cocktail shakers, premium drinkware, home bartending, MixPhD",
+  link: "/favicon.ico",
   structuredData: {
     "@context": "http://schema.org",
     "@type": "WebSite",
@@ -35,6 +38,7 @@ export const metadata = {
     "twitter:card": "summary_large_image",
     "og:site_name": "MixPhD - Premium Drinkware & Barware for Cocktail Enthusiasts",
   },
+  
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {

@@ -89,7 +89,31 @@ export const ProductDetails = ({ product }: { product: Product }) => (
               className="w-full h-full rounded-3xl object-cover"
               src={product.logo_src}
               alt={`${product.full_name} image`}
+              
             />
+              {/* Reflection Layer */}
+  {/* <div 
+    className="
+      left-0 right-0 
+    relative
+    bg-image bg-cover bg-center  
+    bg-gradient-to-t from-black/0 to-black/100
+      z-0
+      transform scale-y-[-1]
+    "
+  >
+      <div className=" inset-0 bg-gradient-to-b from-black via-gray-500 to-transparent"></div>
+      <div className=" inset-0 opacity-20">
+    <img
+      src={product.logo_src}
+      alt={`${product.full_name} image`}
+      className="w-full h-full  rounded-3xl object-cover "
+    />
+  </div>
+  </div>
+   */}
+
+            
           </div>
           <CardDescription className="text-2xl leading-tight text-neutral-800 text-balance dark:text-neutral-400">
             {product.description}
