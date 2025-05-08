@@ -139,32 +139,32 @@ export const FeaturedGrid: React.FC<{ featuredData: Product[] }> = ({
 export const EmptyFeaturedGrid = () => {
   const emptyData = [
     {
-      codename: "Emerald Martini",
-      punchline: "Drinking gemstones",
-      product_website: "https://newcult.co",
+      codename: "Spritz - Wine Cocktail",
+      punchline: "Spritz - Wine Cocktail Sometimes Sparkling",
+      product_website: "https://www.mixphd.com/products/48aa40e7-8523-49b5-9e56-665e081652ab",
       description:
-        "This gem offers a playful, fruity twist on the classic martini, perfect for a lively setting",
-      logo_src: "/green-martini-min.jpeg",
+        "Spritz is a classic Wine-Based cocktail with a refreshing mix of Prosecco, Aperol, and soda water. This drink has a vibrant flavor profile that's perfect for any event where you want to feel like you're on vacation.",
+      logo_src: "https://mixphd.s3.us-west-1.amazonaws.com/recipe_images/542025/mixphd-recipe-image75.webp",
       tags: ["featured"],
       labels: ["featured-ad"],
     },
     {
-      codename: "Cherry Lemon Drop Martini",
-      product_website: "https://newcult.co",
-      punchline: "Cherry Lemon Goodness",
+      codename: "Classic Bloody Mary",
+      product_website: "https://www.mixphd.com/products/629c3c97-29ac-490b-ae45-cb17b280f123",
+      punchline: "Classic Bloody Mary",
       description:
-        "Crisp, bold, and made to dazzle at any chic daytime soiree",
-      logo_src: "/white-martini-min.jpeg",
+        "Wake up your senses with the classic Bloody Mary, a truly iconic Mixed Drink known for its bold, Savory character! This is the ultimate brunch companion, a flavorful blend anchored by smooth",
+      logo_src: "https://mixphd.s3.us-west-1.amazonaws.com/recipe_images/542025/mixphd-recipe-image10.webp",
       tags: ["featured"],
       labels: ["featured-ad"],
     },
     {
-      codename: "Goldie - The Golden Olive Martini",
-      product_website: "https://newcult.co",
-      punchline: "Goldie",
+      codename: "The French-Martini",
+      product_website: "https://www.mixphd.com/products/4e544cd3-4530-4de7-9c6e-32c44d1b0c03",
+      punchline: "Tropical The French-Martini",
       description:
-        "A bold martini variation with a golden hue, likely infused with a hint of citrus liqueur, garnished with a single olive and a bright orange slice.",
-      logo_src: "/orange-martini-min.jpeg",
+        "The French-Martini / Cocktail is a creamy, sweetened cocktail that’s equal parts sophistication and fun. With vodka, Chambord, and pineapple juice, it’s a must-try for fans of tropical vibes and bold flavors.",
+      logo_src: "https://mixphd.s3.us-west-1.amazonaws.com/recipe_images/542025/mixphd-recipe-image29.webp",
       tags: ["featured"],
       labels: ["featured-ad"],
     },
@@ -175,7 +175,7 @@ export const EmptyFeaturedGrid = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {emptyData.map((data, index) => (
           <Link
-            href="https://newcult.co"
+            href="https://www.mixphd.com/"
             target="_blank"
             rel="noreferrer noopener"
             key={`featured-${index}-${data.codename}`}
