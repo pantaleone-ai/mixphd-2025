@@ -6,7 +6,7 @@ import { DirectorySearch } from "@/components/directory-search"
 import { Hero } from "@/components/hero"
 
 import {
-  EmptyFeaturedGrid,
+  // EmptyFeaturedGrid,
   FeaturedGrid,
   ResourceCardGrid,
 } from "../components/directory-card-grid"
@@ -59,7 +59,7 @@ async function Page({ searchParams }: { searchParams: { search?: string } }) {
                   </Suspense>
                 ) : (
                   <div className="relative">
-                    <EmptyFeaturedGrid />
+                    {/* <EmptyFeaturedGrid /> */}
                   </div>
                 )}
               </div>
