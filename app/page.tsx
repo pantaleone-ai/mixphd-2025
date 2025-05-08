@@ -6,7 +6,7 @@ import { DirectorySearch } from "@/components/directory-search"
 import { Hero } from "@/components/hero"
 
 import {
-  // EmptyFeaturedGrid,
+  EmptyFeaturedGrid,
   FeaturedGrid,
   ResourceCardGrid,
 } from "../components/directory-card-grid"
@@ -16,10 +16,10 @@ import { getProducts } from "./actions/product"
 
 // Select the resources you want to feature.. AD SPACE?
 const FEATURED_IDS = [
-  // "3b741434-1bdb-4903-91e9-a7fa154a8fdf",
-  // "f8a5db00-c80e-4fe4-80a7-af9d79a03690",
-  // "ad4b9d2e-6461-4eed-afbf-86aa284000cc",
-  "",
+  "48aa40e7-8523-49b5-9e56-665e081652ab",
+  "629c3c97-29ac-490b-ae45-cb17b280f123",
+  "4e544cd3-4530-4de7-9c6e-32c44d1b0c03",
+  "e4a4e1ff-4e63-449c-b409-3bb49128e79f",
 ] // Replace 'id1', 'id2', 'id3' with actual IDs you want to feature
 
 async function Page({ searchParams }: { searchParams: { search?: string } }) {
@@ -59,7 +59,7 @@ async function Page({ searchParams }: { searchParams: { search?: string } }) {
                   </Suspense>
                 ) : (
                   <div className="relative">
-                    {/* <EmptyFeaturedGrid /> */}
+                    <EmptyFeaturedGrid />
                   </div>
                 )}
               </div>
