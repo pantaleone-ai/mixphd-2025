@@ -40,7 +40,7 @@ export function DirectorySearch() {
         className={cn("relative pr-10 pl-12 shadow-sm md:py-5 w-full")}
         tabIndex={0}
         onChange={handleInputChange}
-        placeholder="Search recipes"
+        placeholder="🍸 Search"
         spellCheck={false}
         enterKeyHint="go"
       >

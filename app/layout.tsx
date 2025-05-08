@@ -33,6 +33,7 @@ export const metadata = {
     "og:title": "MixPhD - Premium Drinkware & Barware for Cocktail Enthusiasts",
     "og:description": "Shop premium cocktail glasses, shakers, and bar tools at MixPhD. Elevate your mixology game with high-quality drinkware designed for home bartenders.",
     "twitter:card": "summary_large_image",
+    "og:site_name": "MixPhD - Premium Drinkware & Barware for Cocktail Enthusiasts",
   },
 }
 

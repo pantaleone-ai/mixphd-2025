@@ -40,7 +40,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip"
 import { ModeToggle } from "@/app/providers"
-import logo from '@/public/mixphd-logo.png';
+import logo from '@/public/android-chrome-512x512.png';
 
 export function NavSidebar({
   categories,
@@ -457,7 +457,7 @@ export function LogoAnimationLink() {
         <path d="m57.172 4-4 4H10.829l-4-4z" fill="#8228db"></path>
         <path d="M32 29.172 14.829 12h34.343z" fill="#1b3bcc"></path>
       </svg> */}
-      <Image src={ logo } alt="mixPHD Logo" className="relative w-8 h-8 rounded-full bg-black " >
+      <Image src={ logo } alt="mixPHD Logo" className="relative w-8 h-8 rounded-full " >
 
       </Image>
       
