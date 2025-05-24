@@ -26,9 +26,14 @@ export function Hero({ children }: { children?: React.ReactNode }) {
             The best drink recipes in the world recommended by MixPHD
           </span>
         </div>
-        <p className="mt-2 text-center md:text-left text-muted-foreground text-sm md:text-base px-2">
+        <p className="mt-2 text-left text-muted-foreground text-sm md:text-base px-2">
             Explore the World's Best Cocktail & Drink Recipes for Every Occasion
         </p>
+                <Badge className="p-3 text lg m-2" variant="default">
+                  <Link href={'https://amzn.to/4mwW6wS'} target="blank" aria-label="amazing barwear deal" > 
+          Rapid Travel Ice Maker - Perfect for Summer only $55! Exclusive Amazon Deal!  <b>Click Here!</b>
+          </Link>
+        </Badge>
       </div>
       <div className="flex mt-4 mb-4 space-x-4">
         {/* <Button variant="secondary" asChild>

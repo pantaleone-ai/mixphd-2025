@@ -39,6 +39,7 @@ export const metadata = {
     "og:site_name": "MixPhD - Premium Drinkware & Barware for Cocktail Enthusiasts",
   },
   
+  
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {
