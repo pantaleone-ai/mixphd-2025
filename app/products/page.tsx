@@ -11,8 +11,8 @@ import { NavSidebar } from "../../components/nav"
 import { getCachedFilters } from "../actions/cached_actions"
 import { getProducts } from "../actions/product"
 import { DirectorySearch } from "@/components/directory-search"
-import  Footer from "@/components/footer"
-import Announcement from "@/components/announcement"
+import  { Footer } from "@/components/footer"
+import { Announcement } from "@/components/announcement"
 
 export const dynamic = "force-dynamic"
 

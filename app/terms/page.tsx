@@ -6,7 +6,8 @@ import { ReactElement } from "react"
 import { NavSidebar } from "../../components/nav"
 import { getCachedFilters } from "../actions/cached_actions"
 import { getProducts } from "../actions/product"
-import  Footer from "@/components/footer"
+import  { Footer } from "@/components/footer"
+
 
 
 export const dynamic = "force-dynamic"

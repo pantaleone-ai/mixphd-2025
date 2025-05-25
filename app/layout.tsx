@@ -5,12 +5,12 @@ import localFont from "next/font/local"
 import { Toaster } from "@/components/ui/sonner"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import  ScrollToTopButton  from "@/components/ui/scroll-to-top-button"
-import { GoogleAnalytics } from "@next/third-parties/google";
+import { GoogleAnalytics } from "@next/third-parties/google"
 import { ThemeProvider } from "./providers"
 import { link } from "fs"
 import { relative } from "path"
-import  Footer from "@/components/footer"
-import Announcement from "@/components/announcement"
+import  { Footer } from "@/components/footer"
+import { Announcement } from "@/components/announcement"
 
 export const fontSans = localFont({
   src: "../fonts/haskoy.ttf",
