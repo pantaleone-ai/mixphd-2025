@@ -80,7 +80,7 @@ export function NavSidebar({
           "fixed inset-y-0 left-0 z-10 hidden sm:flex flex-col bg-[#FAFAFA] dark:bg-background"
         )}
       >
-        <nav className="flex flex-col items-center gap-4 px-2 py-5">
+        <nav className="flex flex-col items-center gap-4 px-2 py-12">
           {pathname.includes("admin") ? (
             <>
               <LogoAnimationLink />

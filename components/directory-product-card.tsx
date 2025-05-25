@@ -97,7 +97,7 @@ export const ResourceCard: React.FC<{
             )}
           >
             {data.logo_src ? (
-              <MinimalCardImage alt={data.codename} src={data.logo_src} />
+              <MinimalCardImage alt={data.codename} src={data.logo_src}className="hover:scale-105 transition-transform duration-300"/>
             ) : null}
 
             <MinimalCardTitle
