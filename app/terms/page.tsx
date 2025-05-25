@@ -37,8 +37,9 @@ export default async function ProductsPage({
       />
       <div className="grid">
       <div className=" max-w-full p-6 ml-auto">
+
  <h1 className="text-3xl font-bold text-center mb-6 text-gray-100">Terms of Use for MixPhD.com</h1>
-    <p className="text-lg italic mb-4">Effective Date: May 5, 2025</p>
+   <p className="text-lg italic mb-4">Effective Date: May 5, 2025</p>
 
     <p className="mb-4">Welcome to MixPhD ("we," "our," or "us"). These Terms of Use ("Terms") govern your access to and use of our website (<a href="https://mixphd.com" className="text-indigo-400 hover:underline">https://mixphd.com</a>) and any services, features, or content we provide, including but not limited to accessing, submitting, or commenting on alcoholic and non-alcoholic drink recipes (collectively, the "Services"). By accessing or using our Services, you agree to be bound by these Terms. If you do not agree, you must refrain from using our Services.</p>
 
@@ -159,39 +160,10 @@ export default async function ProductsPage({
 
     <p className="mt-4 text-center italic">Note: Recipes involving alcohol should be used responsibly. Always follow local laws regarding alcohol consumption and ensure you are of legal drinking age in your jurisdiction. MixPhD is not responsible for any misuse of recipes or alcohol-related harm.</p>
     <p className="mt-4 text-center italic">By accessing or using our Services, you acknowledge that you have read, understood, and agree to be fully bound by these Terms of Use.</p>      </div>
-        <FadeIn>
+        
+        
 
-          <ResourceCardGrid sortedData={data} filteredFeaturedData={null}>
-            {search ?? category ?? label ?? tag ? (
-              <div className="md:mr-auto mx-auto flex flex-col items-center md:items-start">
-                <div className="flex mb-1 justify-center md:justify-start">
-                
-                  {search ? (
-                    <Search className="mr-1 bg-neutral-800 size-6 p-1 rounded-full" />
-                  ) : null}
-                  {category ? (
-                    <BoxIcon className="mr-1 bg-neutral-800 size-6 p-1 rounded-full" />
-                  ) : null}
-                  {label ? (
-                    <Hash className="mr-1 bg-neutral-800 size-6 p-1 rounded-full" />
-                  ) : null}
-                  {tag ? (
-                    <TagIcon className="mr-1 bg-neutral-800 size-6 p-1 rounded-full" />
-                  ) : null}
-                  {search ? "search" : ""}
-                  {category ? "category" : ""}
-                  {label ? "label" : ""}
-                  {tag ? "tag" : ""}
-                </div>
-                <GradientHeading size="xxl">
-                  {search ?? category ?? label ?? tag}
-                </GradientHeading>
-              </div>
-            ) : null}
-
-            <Separator className="mb-12 ml-auto w-[85%] bg-black/5 h-[2px] animate-pulse rounded-l-full" />
-          </ResourceCardGrid>
-        </FadeIn>
+       
       </div>
     </>
   )
