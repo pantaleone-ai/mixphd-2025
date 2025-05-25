@@ -27,7 +27,9 @@ const ProductIdPage = async ({ params }: { params: { slug: string } }) => {
                   </div> */}
             {data ? <ProductDetails product={data[0]} /> : null}</FadeIn>
         </div>
+        
       </div>
+      
     </>
   )
 }

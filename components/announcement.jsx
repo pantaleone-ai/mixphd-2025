@@ -1,9 +1,7 @@
 import React from 'react';
 
-
-export function Announcement () {
+const Announcement = () => {
   return (
-                    
                     <div className="sticky shadow-sm top-0 border-b border-gray-800 bg-black px-4 py-1 text-gray-200 z-20">
                   <p className="text-center font-medium text-sm/6">
                    mixPHD recommended
@@ -12,3 +10,5 @@ export function Announcement () {
                 </div>
   );
 };
+
+export default Announcement;
