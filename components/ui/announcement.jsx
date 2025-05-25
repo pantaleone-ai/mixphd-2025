@@ -10,5 +10,7 @@ export function Announcement () {
                     <a href="https://amzn.to/3SmSAHM" className="inline-block underline p-1" target="blank"> barwear deals @ Amazon</a>
                   </p>
                 </div>
-  );
-};
+  )
+}
+Announcement.displayName = "CardFooter"
+export { Announcement }

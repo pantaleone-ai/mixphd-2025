@@ -9,8 +9,8 @@ import { GoogleAnalytics } from "@next/third-parties/google"
 import { ThemeProvider } from "./providers"
 import { link } from "fs"
 import { relative } from "path"
-import  { Footer } from "@/components/footer"
-import { Announcement } from "@/components/announcement"
+import Footer from "@/components/ui/footer"
+import { Announcement } from "@/components/ui/announcement"
 
 export const fontSans = localFont({
   src: "../fonts/haskoy.ttf",

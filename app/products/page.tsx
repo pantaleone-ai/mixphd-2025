@@ -11,8 +11,8 @@ import { NavSidebar } from "../../components/nav"
 import { getCachedFilters } from "../actions/cached_actions"
 import { getProducts } from "../actions/product"
 import { DirectorySearch } from "@/components/directory-search"
-import  { Footer } from "@/components/footer"
-import { Announcement } from "@/components/announcement"
+import  { Footer } from "@/components/ui/footer"
+import { Announcement } from "@/components/ui/announcement"
 
 export const dynamic = "force-dynamic"
 
@@ -74,6 +74,7 @@ export default async function ProductsPage({
 
             <Separator className="mb-12 ml-auto w-[85%] bg-black/5 h-[2px] animate-pulse rounded-l-full" />
           </ResourceCardGrid>
+          <Footer />
         </FadeIn>
       </div>
     </>

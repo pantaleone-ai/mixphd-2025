@@ -1,6 +1,8 @@
 import React from 'react';
 
-export function Footer () {
+const Footer: React.FC = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="fixed bottom-0 left-0 z-20 w-full p-2 border-t border-gray-800 shadow-sm bg-black">
       <span className="text-xs text-gray-500 sm:text-center">
@@ -26,3 +28,6 @@ export function Footer () {
     </footer>
   );
 };
+
+export default Footer;
+
