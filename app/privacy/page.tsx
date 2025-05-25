@@ -8,6 +8,8 @@ import { FadeIn } from "@/components/cult/fade-in"
 import { NavSidebar } from "../../components/nav"
 import { getCachedFilters } from "../actions/cached_actions"
 import { getProducts } from "../actions/product"
+import  Footer from "@/components/footer"
+import Announcement from "@/components/announcement"
 
 
 export const dynamic = "force-dynamic"
@@ -36,6 +38,7 @@ export default async function ProductsPage({
       <div className="grid">
       <div className=" max-w-full p-6 ml-auto">
  <h1 className="text-3xl font-bold text-center mb-6 text-gray-100">Privacy Policy for MixPhD.com</h1>
+<Announcement />
 <FadeIn>
     <p className="text-lg italic mb-4">Effective Date: May 5, 2025</p>
 
@@ -180,6 +183,8 @@ export default async function ProductsPage({
     </section>
 
     <p className="mt-4 text-center italic">Note: Recipes involving alcohol should be used responsibly. Always follow local laws regarding alcohol consumption and ensure you are of legal drinking age in your jurisdiction. MixPhD is not responsible for any misuse of recipes or alcohol-related harm.</p>
+     
+     <Footer />
       </FadeIn>
       </div>
         

@@ -9,6 +9,8 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import { ThemeProvider } from "./providers"
 import { link } from "fs"
 import { relative } from "path"
+import  Footer from "@/components/footer"
+import Announcement from "@/components/announcement"
 
 export const fontSans = localFont({
   src: "../fonts/haskoy.ttf",
@@ -46,6 +48,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${fontSans.variable} font-sans scroll-smooth  `} suppressHydrationWarning={true}>
       <body suppressHydrationWarning={true}>
+        <Announcement />
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -58,6 +61,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 {children}</div>
             </main>
           </TooltipProvider>
+             <Footer  />
           <ScrollToTopButton />
           <Toaster richColors />
         </ThemeProvider>

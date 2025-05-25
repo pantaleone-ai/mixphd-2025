@@ -6,6 +6,8 @@ import { ReactElement } from "react"
 import { NavSidebar } from "../../components/nav"
 import { getCachedFilters } from "../actions/cached_actions"
 import { getProducts } from "../actions/product"
+import  Footer from "@/components/footer"
+
 
 export const dynamic = "force-dynamic"
 
@@ -30,6 +32,7 @@ export default async function TermsPage({
         labels={filters.labels}
         tags={filters.tags}
       />
+
       <div className="grid">
       <div className=" max-w-full p-6 ml-auto">
 
@@ -160,6 +163,7 @@ export default async function TermsPage({
 
        
       </div>
+      <Footer />
     </>
   )
 }
