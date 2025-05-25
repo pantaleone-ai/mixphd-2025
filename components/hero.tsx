@@ -18,9 +18,9 @@ export function Hero({ children }: { children?: React.ReactNode }) {
         </Badge>
       </div>
       <div className="flex flex-col items-center md:items-start md:mt-4">
-        <Badge className="hidden md:block" variant="default">
+        {/* <Badge className="hidden md:block" variant="default">
           Quench here ⤵️
-        </Badge>
+        </Badge> */}
         <div className="flex w-full items-center mt-2 justify-center md:justify-start">
           <span className="mx-2 text-xl font-bold text-left">
             The best drink recipes in the world recommended by MixPHD
@@ -31,7 +31,8 @@ export function Hero({ children }: { children?: React.ReactNode }) {
         </p>
                 <Badge className="p-3 text lg m-2" variant="default">
                   <Link href={'https://amzn.to/4mwW6wS'} target="blank" aria-label="amazing barwear deal" > 
-          Rapid Travel Ice Maker - Perfect for Summer only $55! Exclusive Amazon Deal!  <b>Click Here!</b>
+          <img src="https://m.media-amazon.com/images/I/61y0oq3IAyL._SX522_.jpg" width={120} className="content-start"></img>
+         <span className="content-normal align-middle whitespace-normal"> Rapid Travel Ice Maker - Perfect for Summer only $55! <b>Claim Amazon Deal</b></span>
           </Link>
         </Badge>
       </div>

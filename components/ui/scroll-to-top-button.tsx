@@ -11,6 +11,7 @@ const ScrollToTopButton = () => {
           height: "40px",
           width: "40px",
           borderRadius: "50%",
+          zIndex:"100",
         }}
         className="!bottom-5 !right-5 rounded-full bg-gray-50 p-2.5 !shadow-sm !ring-1 !ring-gray-300 dark:bg-zinc-800 dark:!ring-zinc-700"
         smooth

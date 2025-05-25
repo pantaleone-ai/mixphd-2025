@@ -54,7 +54,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         >
           <TooltipProvider>
             <main className="bg-[#FAFAFA] dark:bg-background  text-foreground flex flex-col justify-center items-center w-full pt-13">
-              <div className=" w-full ">{children}</div>
+              <div className=" w-full ">
+                {children}</div>
             </main>
           </TooltipProvider>
           <ScrollToTopButton />
