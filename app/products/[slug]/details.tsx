@@ -23,6 +23,21 @@ import {
 import { Button } from "@/components/ui/button"
 import { CardDescription, CardTitle } from "@/components/ui/card"
 
+// STEP 1: UPDATED TYPESCRIPT INTERFACES
+// ======================================
+
+// Define the new interface for your structured JSONB data
+interface LongDescription {
+  introduction: string
+  ingredients: { amount: string; name: string }[]
+  preparation: string[]
+  notesAndTips: string
+  history: string
+  visualDescription: string
+  conclusion: string
+}
+
+// Update your main Product interface to use the new type
 interface Product {
   id: string
   created_at: string
@@ -40,8 +55,107 @@ interface Product {
   approved: boolean
   labels: string[]
   categories: string
-  long_description: string
+  // This is the important change
+  long_description: LongDescription // Changed from 'string'
 }
+
+// STEP 2: NEW HELPER COMPONENT TO RENDER THE STRUCTURED DATA
+// ==========================================================
+
+const StructuredDescription = ({ data }: { data: LongDescription }) => {
+  // Return null if data isn't available to prevent errors
+  if (!data) {
+    return null
+  }
+
+  return (
+    <div className="pt-8 space-y-8 text-xl tracking-tight leading-relaxed text-neutral-800 dark:text-neutral-400">
+      {/* Introduction */}
+      {data.introduction && (
+        <div className="space-y-2">
+          <h3 className="text-3xl font-bold tracking-tighter text-neutral-900 dark:text-neutral-200">
+            Introduction
+          </h3>
+          <p style={{ whiteSpace: "pre-line" }}>{data.introduction}</p>
+        </div>
+      )}
+
+      {/* Ingredients */}
+      {data.ingredients && data.ingredients.length > 0 && (
+        <div className="space-y-3">
+          <h3 className="text-3xl font-bold tracking-tighter text-neutral-900 dark:text-neutral-200">
+            Ingredients
+          </h3>
+          <ul className="space-y-2 list-disc list-inside">
+            {data.ingredients.map((item, index) => (
+              <li key={index}>
+                <span className="font-semibold">{item.amount}</span> of{" "}
+                {item.name}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {/* Preparation */}
+      {data.preparation && data.preparation.length > 0 && (
+        <div className="space-y-3">
+          <h3 className="text-3xl font-bold tracking-tighter text-neutral-900 dark:text-neutral-200">
+            Preparation
+          </h3>
+          <ol className="space-y-2 list-decimal list-inside">
+            {data.preparation.map((step, index) => (
+              <li key={index}>{step}</li>
+            ))}
+          </ol>
+        </div>
+      )}
+
+      {/* Notes and Tips */}
+      {data.notesAndTips && (
+        <div className="space-y-2">
+          <h3 className="text-3xl font-bold tracking-tighter text-neutral-900 dark:text-neutral-200">
+            Notes & Tips
+          </h3>
+          <p style={{ whiteSpace: "pre-line" }}>{data.notesAndTips}</p>
+        </div>
+      )}
+
+      {/* History */}
+      {data.history && (
+        <div className="space-y-2">
+          <h3 className="text-3xl font-bold tracking-tighter text-neutral-900 dark:text-neutral-200">
+            History
+          </h3>
+          <p style={{ whiteSpace: "pre-line" }}>{data.history}</p>
+        </div>
+      )}
+      
+      {/* Visual Description */}
+      {data.visualDescription && (
+        <div className="space-y-2">
+          <h3 className="text-3xl font-bold tracking-tighter text-neutral-900 dark:text-neutral-200">
+            Visual Description
+          </h3>
+          <p style={{ whiteSpace: "pre-line" }}>{data.visualDescription}</p>
+        </div>
+      )}
+
+      {/* Conclusion */}
+      {data.conclusion && (
+        <div className="space-y-2">
+          <h3 className="text-3xl font-bold tracking-tighter text-neutral-900 dark:text-neutral-200">
+            Conclusion
+          </h3>
+          <p style={{ whiteSpace: "pre-line" }}>{data.conclusion}</p>
+        </div>
+      )}
+    </div>
+  )
+}
+
+// STEP 3: MAIN COMPONENT WITH THE FINAL UPDATE
+// ==================================================
 
 export const ProductDetails = ({ product }: { product: Product }) => (
   <div className={cn("py-2 relative flex flex-col h-full")}>
@@ -63,12 +177,14 @@ export const ProductDetails = ({ product }: { product: Product }) => (
             <Blocks className="stroke-1 size-8" />{" "}
             <span className="flex-wrap">{product.categories}</span>
           </CardDescription>
-              {product.tags && Array.isArray(product.tags) && product.tags.length > 0 && (
-            <CardDescription className="md:text-xl text-lg tracking-tight text-neutral-800 text-balance dark:text-neutral-400 flex gap-2 items-center">
-              <Tag className="stroke-1 size-8" />{" "}
-              <span className="flex-wrap">{product.tags.join(", ")}</span>
-            </CardDescription>
-          )}
+          {product.tags &&
+            Array.isArray(product.tags) &&
+            product.tags.length > 0 && (
+              <CardDescription className="md:text-xl text-lg tracking-tight text-neutral-800 text-balance dark:text-neutral-400 flex gap-2 items-center">
+                <Tag className="stroke-1 size-8" />{" "}
+                <span className="flex-wrap">{product.tags.join(", ")}</span>
+              </CardDescription>
+            )}
 
           <Link
             href={`/products`}
@@ -89,70 +205,25 @@ export const ProductDetails = ({ product }: { product: Product }) => (
               className="w-full h-full rounded-3xl object-cover"
               src={product.logo_src}
               alt={`${product.full_name} image`}
-              
             />
-              {/* Reflection Layer */}
-  {/* <div 
-    className="
-      left-0 right-0 
-    relative
-    bg-image bg-cover bg-center  
-    bg-gradient-to-t from-black/0 to-black/100
-      z-0
-      transform scale-y-[-1]
-    "
-  >
-      <div className=" inset-0 bg-gradient-to-b from-black via-gray-500 to-transparent"></div>
-      <div className=" inset-0 opacity-20">
-    <img
-      src={product.logo_src}
-      alt={`${product.full_name} image`}
-      className="w-full h-full  rounded-3xl object-cover "
-    />
-  </div>
-  </div>
-   */}
-
-            
           </div>
           <CardDescription className="text-2xl leading-tight text-neutral-800 text-balance dark:text-neutral-400">
             {product.description}
           </CardDescription>
-          <CardDescription className="pt-8 text-xl tracking-tight leading-tight text-neutral-800 text-balance dark:text-neutral-400">
-            {product.long_description}
-          </CardDescription>
+          
+          {/* This is the updated section that renders the structured JSONB data */}
+          <StructuredDescription data={product.long_description} />
 
           <div className="md:text-xl sm:text-lg tracking-tight text-neutral-800 text-balance dark:text-neutral-400 flex gap-2 items-center flex-wrap text-sm">
-            {product.labels && Array.isArray(product.labels) && product.labels[0] !== "unlabeled" &&
-            product.labels.map((label, index) => (
-          <Link
-            key={index}
-            href={`/products?label=${label}`}
-          >
-          {/* Add content for the Link component, e.g., label text */}
-          {label}
-        </Link>
-         ))
-       }
+            {product.labels &&
+              Array.isArray(product.labels) &&
+              product.labels[0] !== "unlabeled" &&
+              product.labels.map((label, index) => (
+                <Link key={index} href={`/products?label=${label}`}>
+                  {label}
+                </Link>
+              ))}
           </div>
-
-          {/* {product.product_website && (
-            <Button
-              asChild
-              variant="secondary"
-              size="lg"
-              className="w-full flex items-center justify-center py-6 text-lg rounded-[44px]"
-            >
-              <a
-                href={product.product_website}
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                <span className="font-semibold">Check out site</span>
-                <ExternalLink className="ml-2 h-4 w-4" />
-              </a>
-            </Button>
-          )} */}
         </div>
       </div>
     </div>
@@ -163,28 +234,30 @@ export const ProductDetails = ({ product }: { product: Product }) => (
       <ArrowLeft className="mr-2" /> Back to all recipes
     </Link>
     <div className="absolute top-36 md:top-0 left-[-10%] right-0 h-[400px] w-[300px]  md:h-[500px] md:w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(59,130,246,.15),rgba(255,255,255,0))]"></div>
-               <footer className="fixed bottom-0 left-0 z-20 w-full p-2 border-t border-gray-800 shadow-sm bg-black">
+    <footer className="fixed bottom-0 left-0 z-20 w-full p-2 border-t border-gray-800 shadow-sm bg-black">
       <span className="text-xs text-gray-500 sm:text-center">
-        © <a href="https://mixphd.com/" className="hover:underline"><b>🍸 MixPHD™</b></a> All Rights Reserved
+        ©{" "}
+        <a href="https://mixphd.com/" className="hover:underline">
+          <b>🍸 MixPHD™</b>
+        </a>{" "}
+        All Rights Reserved
       </span>
       <ul className="flex flex-wrap items-center mt-1 mb-1 text-xs font-medium text-gray-500">
-        {/* <li>
-          <a href="#" className="hover:underline me-4 md:me-6">About</a>
-        </li> */}
         <li>
-          <a href="/privacy" className="hover:underline me-4 md:me-6">Privacy Policy</a>
+          <a href="/privacy" className="hover:underline me-4 md:me-6">
+            Privacy Policy
+          </a>
         </li>
         <li>
-          <a href="/terms" className="hover:underline me-4 md:me-6">Terms of use</a>
+          <a href="/terms" className="hover:underline me-4 md:me-6">
+            Terms of use
+          </a>
         </li>
-        {/* <li>
-          <a href="#" className="hover:underline">Contact</a>
-        </li> */}
         <span className="text-xs text-gray-800 m-0 p-0">
-          mixPHD.com is for those of legal drinking age. By accessing, you confirm you are of drinking age. Drink responsibly.
+          mixPHD.com is for those of legal drinking age. By accessing, you
+          confirm you are of drinking age. Drink responsibly.
         </span>
       </ul>
     </footer>
   </div>
-  
 )
