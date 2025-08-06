@@ -2,17 +2,7 @@
 
 import React from "react"
 import Link from "next/link"
-import {
-  ArrowLeft,
-  Blocks,
-  Edit2Icon,
-  ExternalLink,
-  Hash,
-  HeartIcon,
-  MessageSquareTextIcon,
-  Sparkles,
-  Tag,
-} from "lucide-react"
+import { ArrowLeft, Blocks, Tag } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import {
@@ -20,21 +10,35 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
 } from "@/components/ui/breadcrumb"
-import { Button } from "@/components/ui/button"
 import { CardDescription, CardTitle } from "@/components/ui/card"
 
-// STEP 1: UPDATED TYPESCRIPT INTERFACES
+// STEP 1: UPDATED TYPESCRIPT INTERFACE
 // ======================================
-
-// Define the new interface for your structured JSONB data
+// This interface now matches the actual JSON structure from your Supabase table.
+// It uses optional fields for ingredients and preparation steps.
 interface LongDescription {
   introduction: string
-  ingredients: { amount: string; name: string }[]
-  preparation: string[]
-  notesAndTips: string
-  history: string
-  visualDescription: string
   conclusion: string
+  notes_and_tips: string
+  history_or_origin: string
+  visual_description: string
+  ingredients_1?: string
+  ingredients_2?: string
+  ingredients_3?: string
+  ingredients_4?: string
+  ingredients_5?: string
+  ingredients_6?: string
+  ingredients_7?: string
+  ingredients_8?: string
+  preparation_0?: string
+  preparation_1?: string
+  preparation_2?: string
+  preparation_3?: string
+  preparation_4?: string
+  preparation_5?: string
+  preparation_6?: string
+  preparation_7?: string
+  preparation_8?: string
 }
 
 // Update your main Product interface to use the new type
@@ -55,18 +59,40 @@ interface Product {
   approved: boolean
   labels: string[]
   categories: string
-  // This is the important change
-  long_description: LongDescription // Changed from 'string'
+  long_description: LongDescription // Uses the updated interface
 }
 
-// STEP 2: NEW HELPER COMPONENT TO RENDER THE STRUCTURED DATA
-// ==========================================================
+// STEP 2: UPDATED HELPER COMPONENT TO RENDER THE STRUCTURED DATA
+// ==============================================================
 
 const StructuredDescription = ({ data }: { data: LongDescription }) => {
-  // Return null if data isn't available to prevent errors
   if (!data) {
     return null
   }
+
+  // Helper function to extract and filter ingredients from the data object.
+  const getIngredients = () => {
+    return Object.keys(data)
+      .filter(
+        (key) =>
+          key.startsWith("ingredients_") && data[key] && data[key].trim() !== ""
+      )
+      .map((key) => data[key])
+  }
+
+  // Helper function to extract and filter preparation steps.
+  const getPreparationSteps = () => {
+    return Object.keys(data)
+      .filter(
+        (key) =>
+          key.startsWith("preparation_") && data[key] && data[key].trim() !== ""
+      )
+      .sort() // Sort keys to ensure order (e.g., preparation_0, preparation_1, ...)
+      .map((key) => data[key])
+  }
+
+  const ingredients = getIngredients()
+  const preparationSteps = getPreparationSteps()
 
   return (
     <div className="pt-8 space-y-8 text-xl tracking-tight leading-relaxed text-neutral-800 dark:text-neutral-400">
@@ -81,30 +107,27 @@ const StructuredDescription = ({ data }: { data: LongDescription }) => {
       )}
 
       {/* Ingredients */}
-      {data.ingredients && data.ingredients.length > 0 && (
+      {ingredients.length > 0 && (
         <div className="space-y-3">
           <h3 className="text-3xl font-bold tracking-tighter text-neutral-900 dark:text-neutral-200">
             Ingredients
           </h3>
           <ul className="space-y-2 list-disc list-inside">
-            {data.ingredients.map((item, index) => (
-              <li key={index}>
-                <span className="font-semibold">{item.amount}</span> of{" "}
-                {item.name}
-              </li>
+            {ingredients.map((item, index) => (
+              <li key={index}>{item}</li>
             ))}
           </ul>
         </div>
       )}
 
       {/* Preparation */}
-      {data.preparation && data.preparation.length > 0 && (
+      {preparationSteps.length > 0 && (
         <div className="space-y-3">
           <h3 className="text-3xl font-bold tracking-tighter text-neutral-900 dark:text-neutral-200">
             Preparation
           </h3>
           <ol className="space-y-2 list-decimal list-inside">
-            {data.preparation.map((step, index) => (
+            {preparationSteps.map((step, index) => (
               <li key={index}>{step}</li>
             ))}
           </ol>
@@ -112,32 +135,32 @@ const StructuredDescription = ({ data }: { data: LongDescription }) => {
       )}
 
       {/* Notes and Tips */}
-      {data.notesAndTips && (
+      {data.notes_and_tips && (
         <div className="space-y-2">
           <h3 className="text-3xl font-bold tracking-tighter text-neutral-900 dark:text-neutral-200">
             Notes & Tips
           </h3>
-          <p style={{ whiteSpace: "pre-line" }}>{data.notesAndTips}</p>
+          <p style={{ whiteSpace: "pre-line" }}>{data.notes_and_tips}</p>
         </div>
       )}
 
       {/* History */}
-      {data.history && (
+      {data.history_or_origin && (
         <div className="space-y-2">
           <h3 className="text-3xl font-bold tracking-tighter text-neutral-900 dark:text-neutral-200">
             History
           </h3>
-          <p style={{ whiteSpace: "pre-line" }}>{data.history}</p>
+          <p style={{ whiteSpace: "pre-line" }}>{data.history_or_origin}</p>
         </div>
       )}
-      
+
       {/* Visual Description */}
-      {data.visualDescription && (
+      {data.visual_description && (
         <div className="space-y-2">
           <h3 className="text-3xl font-bold tracking-tighter text-neutral-900 dark:text-neutral-200">
             Visual Description
           </h3>
-          <p style={{ whiteSpace: "pre-line" }}>{data.visualDescription}</p>
+          <p style={{ whiteSpace: "pre-line" }}>{data.visual_description}</p>
         </div>
       )}
 
@@ -154,8 +177,8 @@ const StructuredDescription = ({ data }: { data: LongDescription }) => {
   )
 }
 
-// STEP 3: MAIN COMPONENT WITH THE FINAL UPDATE
-// ==================================================
+// STEP 3: MAIN COMPONENT (NO MAJOR CHANGES NEEDED HERE)
+// =======================================================
 
 export const ProductDetails = ({ product }: { product: Product }) => (
   <div className={cn("py-2 relative flex flex-col h-full")}>
@@ -207,11 +230,11 @@ export const ProductDetails = ({ product }: { product: Product }) => (
               alt={`${product.full_name} image`}
             />
           </div>
-          <CardDescription className="text-2xl leading-tight text-neutral-800 text-balance dark:text-neutral-400">
+          {/* <CardDescription className="text-2xl leading-tight text-neutral-800 text-balance dark:text-neutral-400">
             {product.description}
-          </CardDescription>
-          
-          {/* This is the updated section that renders the structured JSONB data */}
+          </CardDescription> */}
+
+          {/* This updated component now correctly renders your data */}
           <StructuredDescription data={product.long_description} />
 
           <div className="md:text-xl sm:text-lg tracking-tight text-neutral-800 text-balance dark:text-neutral-400 flex gap-2 items-center flex-wrap text-sm">
