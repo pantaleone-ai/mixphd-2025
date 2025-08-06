@@ -12,10 +12,8 @@ import {
 } from "@/components/ui/breadcrumb"
 import { CardDescription, CardTitle } from "@/components/ui/card"
 
-// STEP 1: UPDATED TYPESCRIPT INTERFACE
-// ======================================
-// This interface now matches the actual JSON structure from your Supabase table.
-// It uses optional fields for ingredients and preparation steps.
+// STEP 1: INTERFACES (No changes here)
+// ===================================
 interface LongDescription {
   introduction: string
   conclusion: string
@@ -41,7 +39,6 @@ interface LongDescription {
   preparation_8?: string
 }
 
-// Update your main Product interface to use the new type
 interface Product {
   id: string
   created_at: string
@@ -59,11 +56,12 @@ interface Product {
   approved: boolean
   labels: string[]
   categories: string
-  long_description: LongDescription // Uses the updated interface
+  long_description: LongDescription
 }
 
-// STEP 2: UPDATED HELPER COMPONENT TO RENDER THE STRUCTURED DATA
-// ==============================================================
+// STEP 2: HELPER COMPONENT WITH THE FIX
+// =====================================
+// The error is fixed inside this component.
 
 const StructuredDescription = ({ data }: { data: LongDescription }) => {
   if (!data) {
@@ -72,20 +70,27 @@ const StructuredDescription = ({ data }: { data: LongDescription }) => {
 
   // Helper function to extract and filter ingredients from the data object.
   const getIngredients = () => {
-    return Object.keys(data)
+    // We use a type predicate `key is keyof LongDescription` to inform TypeScript
+    // that any key passing the filter is a valid key of our interface.
+    return (
+      Object.keys(data) as Array<keyof LongDescription>
+    )
       .filter(
         (key) =>
-          key.startsWith("ingredients_") && data[key] && data[key].trim() !== ""
+          key.startsWith("ingredients_") && data[key] && data[key]!.trim() !== ""
       )
       .map((key) => data[key])
   }
 
   // Helper function to extract and filter preparation steps.
   const getPreparationSteps = () => {
-    return Object.keys(data)
+    // The same fix is applied here.
+    return (
+      Object.keys(data) as Array<keyof LongDescription>
+    )
       .filter(
         (key) =>
-          key.startsWith("preparation_") && data[key] && data[key].trim() !== ""
+          key.startsWith("preparation_") && data[key] && data[key]!.trim() !== ""
       )
       .sort() // Sort keys to ensure order (e.g., preparation_0, preparation_1, ...)
       .map((key) => data[key])
@@ -177,8 +182,8 @@ const StructuredDescription = ({ data }: { data: LongDescription }) => {
   )
 }
 
-// STEP 3: MAIN COMPONENT (NO MAJOR CHANGES NEEDED HERE)
-// =======================================================
+// STEP 3: MAIN COMPONENT (No changes here)
+// ========================================
 
 export const ProductDetails = ({ product }: { product: Product }) => (
   <div className={cn("py-2 relative flex flex-col h-full")}>
@@ -230,9 +235,9 @@ export const ProductDetails = ({ product }: { product: Product }) => (
               alt={`${product.full_name} image`}
             />
           </div>
-          {/* <CardDescription className="text-2xl leading-tight text-neutral-800 text-balance dark:text-neutral-400">
+          <CardDescription className="text-2xl leading-tight text-neutral-800 text-balance dark:text-neutral-400">
             {product.description}
-          </CardDescription> */}
+          </CardDescription>
 
           {/* This updated component now correctly renders your data */}
           <StructuredDescription data={product.long_description} />
