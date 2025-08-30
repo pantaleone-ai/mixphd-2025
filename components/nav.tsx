@@ -274,7 +274,7 @@ function ProductNav({
           {categories?.map((category: string, index: number) => (
             <li key={`category-${index}-${category}`}>
               <Link
-                href={`/products?category=${category}`}
+                href={`/recipes?category=${category}`}
                 onClick={handleLinkClick}
                 className={cn(
                   "flex items-start space-x-2 text-xs font-medium text-neutral-700 dark:text-neutral-300 rounded-md px-2 py-0.5",
@@ -305,7 +305,7 @@ function ProductNav({
           {labels?.map((label: string, index: number) => (
             <li key={`label-${index}-${label}`}>
               <Link
-                href={`/products?label=${label}`}
+                href={`/recipes?label=${label}`}
                 onClick={handleLinkClick}
                 className={cn(
                   "flex items-start space-x-2 text-xs font-medium text-neutral-700 dark:text-neutral-300 rounded-md px-2 py-0.5",
@@ -336,7 +336,7 @@ function ProductNav({
           {tags?.map((tag: string, index: number) => (
             <li key={`tag-${index}-${tag}`}>
               <Link
-                href={`/products?tag=${tag}`}
+                href={`/recipes?tag=${tag}`}
                 onClick={handleLinkClick}
                 className={cn(
                   "flex items-start space-x-2 text-xs font-medium text-neutral-700 dark:text-neutral-300 rounded-md px-2 py-0.5",

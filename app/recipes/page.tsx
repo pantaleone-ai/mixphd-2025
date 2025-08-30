@@ -16,7 +16,7 @@ import { DirectorySearch } from "@/components/directory-search"
 
 export const dynamic = "force-dynamic"
 
-export default async function ProductsPage({
+export default async function RecipesPage({
   searchParams,
 }: {
   searchParams: {

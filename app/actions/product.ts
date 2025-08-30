@@ -75,13 +75,22 @@ export const getProducts = cache(
   }
 )
 
-export async function getProductById(id?: string) {
+export async function getProductById(slug?: string) {
   const supabase = createClient()
 
-  const { data, error } = await supabase
+  let { data, error } = await supabase
     .from("products")
     .select("*")
-    .eq("id", id)
+    .eq("codename", slug)
+
+  // If not found by codename, try by id (for old links)
+  if (!data || data.length === 0) {
+    ({ data, error } = await supabase
+      .from("products")
+      .select("*")
+      .eq("id", slug))
+  }
+
   if (error) {
     console.error("Error fetching resources:", error)
     return []
@@ -104,5 +113,5 @@ export async function incrementClickCount(id: string) {
     console.log("Click count incremented:", data)
   }
 
-  revalidatePath("/products")
+  revalidatePath("/recipes")
 }

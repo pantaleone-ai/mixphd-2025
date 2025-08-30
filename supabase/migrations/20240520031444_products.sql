@@ -1,5 +1,6 @@
 CREATE TABLE public.products (
   id UUID NOT NULL DEFAULT gen_random_uuid(),
+  slug TEXT GENERATED ALWAYS AS (replace(replace(lower(codename), ' ', '-'), '.', '-')) STORED,
   created_at TIMESTAMPTZ NULL DEFAULT timezone('utc'::text, now()),
   full_name TEXT NOT NULL,
   email TEXT NOT NULL,

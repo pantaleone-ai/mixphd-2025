@@ -132,8 +132,8 @@ const StructuredDescription = ({ data }: { data: LongDescription }) => {
             Preparation
           </h3>
           <ol className="space-y-2 list-decimal list-inside">
-            {preparationSteps.map((step, index) => (
-              <li key={index}>{step}</li>
+            {preparationSteps.map((item, index) => (
+              <li key={index}>{item}</li>
             ))}
           </ol>
         </div>
@@ -189,11 +189,11 @@ export const ProductDetails = ({ product }: { product: Product }) => (
   <div className={cn("py-2 relative flex flex-col h-full")}>
     <div className="w-full gap-8 py-2 relative items-center">
       <div className="grid grid-cols-6 md:grid-cols-12 gap-8 w-full">
-        <div className="space-y-6 col-span-6 md:col-span-5 md:mt-12 z-10">
+        <div className="space-y-6 col-span-6 md:col-span-5 md:sticky md:mt-12 z-10">
           <Breadcrumb>
             <BreadcrumbItem>
               <BreadcrumbLink href="/">Recipes</BreadcrumbLink>/
-              <BreadcrumbLink href={`/products/${product.id}`}>
+              <BreadcrumbLink href={`/recipes/${product.codename}`}>
                 {product.codename.substring(0, 20)}
               </BreadcrumbLink>
             </BreadcrumbItem>
@@ -215,7 +215,7 @@ export const ProductDetails = ({ product }: { product: Product }) => (
             )}
 
           <Link
-            href={`/products`}
+            href={`/recipes`}
             className="py-4 md:flex items-center text-2xl font-semibold  z-10 hidden"
           >
             <ArrowLeft className="mr-2" /> Back to all recipes
@@ -247,7 +247,7 @@ export const ProductDetails = ({ product }: { product: Product }) => (
               Array.isArray(product.labels) &&
               product.labels[0] !== "unlabeled" &&
               product.labels.map((label, index) => (
-                <Link key={index} href={`/products?label=${label}`}>
+                <Link key={index} href={`/recipes?label=${label}`}>
                   {label}
                 </Link>
               ))}
