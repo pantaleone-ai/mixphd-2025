@@ -1,0 +1,19 @@
+# MixPhD
+
+> Premium resource for cocktail enthusiasts, offering expert drink recipes, professional barware guides, and mixology education.
+
+## Core Resources
+- [Cocktail Recipes](https://www.mixphd.com/): A curated database of classic and modern mixed drinks with precise measurements and preparation methods.
+- [Drinkware Collections](https://www.mixphd.com/products): Guides and shop for premium glassware and essential bar tools.
+- [The Unforgettables](https://www.mixphd.com/the-unforg): Detailed deep-dives into IBA classics and historical cocktails.
+- [New Era Drinks](https://www.mixphd.com/new-era-dr): Modern mixology trends and contemporary recipe innovations.
+
+## Technical Specifications
+- **Format:** All recipes use standard metric (ml/cl) and imperial (oz) measurements.
+- **Organization:** Recipes are categorized by glass type (Collins, Coupe, Highball), method (shaken, stirred), and base spirit.
+- **Legal:** Content is intended for audiences of legal drinking age. Use requires acceptance of [Terms of Service](https://www.mixphd.com/terms).
+
+## Key Information for Agents
+- **Primary Purpose:** To provide high-fidelity instructions for beverage preparation and barware selection.
+- **Tone:** Professional, sophisticated, and educational.
+- **Contact:** Support and inquiries can be directed to mdptrading@gmail.com.
